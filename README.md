@@ -86,5 +86,7 @@ SNS共有機能を実装し、話題にしやすい状態にする。
 LINE通知機能：期間中、決まった時間にやることを繰り返しリマインドするため
 カレンダー機能：自身のやること・稼動する期間を可視化しやすくするため
 
+## ER図
+![Alt text](ER_Diagram.png)
 ## 画面遷移図
 [画面遷移図](https://www.figma.com/file/d2O7EGcTOsYNRaywy2BxNn/%E3%80%90%E6%8F%90%E5%87%BA%E7%94%A8%E3%80%91I'll-buy-that%EF%BC%81!?type=design&mode=design&t=T9tvLV2J2kxXdXCL-1)
