@@ -15,3 +15,5 @@ RUN gem update --system && \
     gem install --no-document bundler:2.5.7
 
 RUN bundle config set force_ruby_platform true
+
+RUN apk add nodejs
