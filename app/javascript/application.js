@@ -4,6 +4,6 @@
 //= require bootstrap
 import "@hotwired/turbo-rails"
 import "controllers"
-import "./top/style";
+import "./top/style"
 import "popper"
 import "bootstrap"
