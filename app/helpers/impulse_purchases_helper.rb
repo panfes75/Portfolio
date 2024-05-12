@@ -1,0 +1,2 @@
+module ImpulsePurchasesHelper
+end
