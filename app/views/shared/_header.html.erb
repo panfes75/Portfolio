@@ -4,23 +4,22 @@
       <div class="col span-12 header">
         <h1><%= link_to "Ill buy that!", root_path %></h1>
         <div class="row">
-        <div class="col span-12">
-          <nav>
-            <div id="open"></div>
-            <div id="close"></div>   
+          <div class="col span-12">
+            <nav>
+              <div id="open"></div>
+              <div id="close"></div>   
               <div id="navi">
                 <ul>
                   <li><%= link_to '診断する', new_impulse_purchase_path %></li>
-                  <li><%= link_to '診断結果一覧', impulse_purchases_path %></li>
+                  <li><%= link_to '診断結果一覧', "#" %></li>
                   <li><%= link_to 'マイページ', "#" %></li>
                   <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
                 </ul>
               </div>
-          </nav>
+            </nav>
+          </div>
         </div>
       </div>
-      </div>
     </div>
-
   </div>
 </header>
