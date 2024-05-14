@@ -18,10 +18,6 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def show
-    @prod = ImpulsePurchase.find(params[:id])
-    @purchase_amount = @prod["purchase_amount"]
-    @hourly_wage = @prod["hourly_wage"]
-    @operating_time = @purchase_amount.to_f / @hourly_wage.to_f
   end
 
   private

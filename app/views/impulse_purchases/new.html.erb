@@ -1,27 +1,37 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-8 offset-lg-2">
-      <h1>労働時間算出</h1>
-      <%= form_for :impulse_purchase, url: impulse_purchases_path do |f| %> 
-        <div class="mb-3">
-          <%= f.label :title, "タイトル" %>
-          <%= f.text_field :title %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :purchase_amount, "購入金額" %>
-          <%= f.number_field :purchase_amount %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :hourly_wage, "時給選択" %>
-          <%= f.text_field :hourly_wage, list: "combolist" %>
-          <datalist id="combolist">
-            <option value=100>青森</option>
-            <option value=200>秋田</option>
-            <option value=300>東京</option>
-          </datalist>
-        </div>
-        <%= f.submit  "計算" %>
-      <% end %>
+  <form class="diet_form">
+    <div class="mb-3">
+      タイトル：<input type="text" class="box" name="title">
     </div>
+    <div class="mb-3">
+      購入金額：<input type="number" class="box" name="purchase">
+    </div>
+    <div class="mb-3">
+      時給選択：<input type="text" class="box" name="hourly_wage" list="combolist">
+      <datalist id="combolist">
+        <option value=100>青森</option>
+        <option value=200>秋田</option>
+        <option value=300>東京</option>
+      </datalist>
+    </div>
+    <input type="button" class="calc-btn" onclick="calc(purchase.value, hourly_wage.value);" value="計算">
+    <hr class="line">
+    <h1>結果</h1>
+    <div class="mb-3">
+      <input id="copy" class="box" type="number" readonly="">円には、
+      <input id="time" class="box" type="number" readonly="">時間分の労働が必要です。
+    </div>
+    <div class="mb-3">
+      <%= link_to  "購入を見送る？", "#" %>
+      <%= link_to  "購入する？", "#" %>
+    </div>
+  </form>
   </div>
 </div>
+<script>
+    function calc(purchase, hourly_wage) {
+        const time_value = document.getElementById('time').value = parseFloat((purchase / hourly_wage).toFixed(2));
+        const copy_value = document.getElementById('copy').value = Math.round(purchase)
+    }
+</script>
