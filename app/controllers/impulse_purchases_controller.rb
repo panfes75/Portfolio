@@ -1,18 +1,19 @@
 class ImpulsePurchasesController < ApplicationController
   def index
-    # @prods = ImpulsePurchase.all.includes(:user).order(created_at: :desc)
+    # @@impulse_purchases = ImpulsePurchase.all.includes(:user).order(created_at: :desc)
   end
 
   def new
-    @prod = ImpulsePurchase.new
+    @impulse_purchase = ImpulsePurchase.new
   end
 
   def create
-    @prod = current_user.impulse_purchases.build(impulse_purchase_params)
-    if @prod.save
-      redirect_to impulse_purchase_path(@prod) , notice: "Message"
+    @impulse_purchase = current_user.impulse_purchases.build(impulse_purchase_params)
+    if @impulse_purchase.save
+      format.turbo_stream { flash[:success] = "成功しました" }
+      redirect_to impulse_purchase_path(@impulse_purchase)
     else
-      flash.now['danger'] = t('defaults.message.not_created')
+      flash.now[:warning] = "投稿に失敗しました" 
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,6 +24,6 @@ class ImpulsePurchasesController < ApplicationController
   private
 
   def impulse_purchase_params
-    params.require(:impulse_purchase).permit(:title, :purchase_amount, :hourly_wage)
+    params.require(:impulse_purchase).permit(:title, :purchase_amount, :hourly_wage, :operating_time)
   end
 end

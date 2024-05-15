@@ -49,6 +49,7 @@ gem "devise"
 
 gem 'execjs'
 gem 'sassc-rails'
+gem 'jquery-rails'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
