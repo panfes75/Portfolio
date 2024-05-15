@@ -1,6 +1,6 @@
 class ImpulsePurchasesController < ApplicationController
   def index
-    # @@impulse_purchases = ImpulsePurchase.all.includes(:user).order(created_at: :desc)
+    # @impulse_purchases = ImpulsePurchase.all.includes(:user).order(created_at: :desc)
   end
 
   def new
@@ -10,10 +10,10 @@ class ImpulsePurchasesController < ApplicationController
   def create
     @impulse_purchase = current_user.impulse_purchases.build(impulse_purchase_params)
     if @impulse_purchase.save
-      format.turbo_stream { flash[:success] = "成功しました" }
+      flash[:notice] = "成功だ"
       redirect_to impulse_purchase_path(@impulse_purchase)
     else
-      flash.now[:warning] = "投稿に失敗しました" 
+      flash.now[:alert] = "投稿に失敗しました" 
       render :new, status: :unprocessable_entity
     end
   end

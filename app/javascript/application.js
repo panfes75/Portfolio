@@ -5,7 +5,9 @@
 import $ from 'jquery';
 window.$ = $;
 window.jQuery = $;
-import "@hotwired/turbo-rails";
+
+import { Turbo } from "@hotwired/turbo-rails"
+Turbo.session.drive = false
 import "./controllers/application";
 import "./controllers/hello_controller";
 import "./menu";

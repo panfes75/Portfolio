@@ -1,6 +1,7 @@
 <div class="container">
   <div class="row">
-    <%= form_for :impulse_purchase, url: impulse_purchases_path do |f| %> 
+  <%= form_with model: @impulse_purchase, local:true  do |f| %> 
+    <%= render 'layouts/error_messages', model: f.object %>
       <div class="mb-3">
         <%= f.label :title, "タイトル" %>
         <%= f.text_field :title %>

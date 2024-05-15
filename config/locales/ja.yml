@@ -1,0 +1,18 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー 
+      impulse_purchase: 衝動買い
+    attributes:
+      user: 
+        nickname: 名前
+        email: Eメール
+        encrypted_password: パスワード
+        avatar: 画像
+      impulse_purchase:
+        title: タイトル
+        purchase_amount: 購入金額
+        hourly_wage: 時給
+        operating_time: 労働時間
+        comment: コメント
+        privacy: 公開設定
