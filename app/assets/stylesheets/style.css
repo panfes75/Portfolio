@@ -241,16 +241,34 @@ footer h4 {
     border-radius: 5px;
     padding: 16px 24px;
     margin: 16px 0px;
-  }
+}
    
-  .flash-message.notice {
+.flash-message.notice {
     background-color: #bcdfff;
     color: #0067C0;
     border: solid 1px #0067C0;
-  }
+}
    
-  .flash-message.alert {
+.flash-message.alert {
     background-color: #ffd4d1;
     color: #930403;
     border: solid 1px #930403;
-  }
+}
+/*エラーメッセージ
+-------------------------------------*/
+.error_explanation {
+    color:#262626; 
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px;
+    width: 50%;
+    font-weight: 850;
+    margin:0 auto;
+}
+/*
+-------------------------------------*/
+.result {
+    width: 70%;
+    margin:0 auto;
+}

@@ -83,3 +83,4 @@ end
 gem "dockerfile-rails", ">= 1.6", :group => :development
 
 gem 'rails-i18n'
+gem 'devise-i18n-views'
