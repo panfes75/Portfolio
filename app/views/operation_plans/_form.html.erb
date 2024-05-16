@@ -1,0 +1,42 @@
+<%= form_with(model: operation_plan) do |form| %>
+  <% if operation_plan.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(operation_plan.errors.count, "error") %> prohibited this operation_plan from being saved:</h2>
+
+      <ul>
+        <% operation_plan.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :start_on, style: "display: block" %>
+    <%= form.date_field :start_on %>
+  </div>
+
+  <div>
+    <%= form.label :completion_on, style: "display: block" %>
+    <%= form.date_field :completion_on %>
+  </div>
+
+  <div>
+    <%= form.label :remind, style: "display: block" %>
+    <%= form.check_box :remind %>
+  </div>
+
+  <div>
+    <%= form.label :task, style: "display: block" %>
+    <%= form.text_field :task %>
+  </div>
+
+  <div>
+    <%= form.label :impulse_purchase_id, style: "display: block" %>
+    <%= form.text_field :impulse_purchase_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

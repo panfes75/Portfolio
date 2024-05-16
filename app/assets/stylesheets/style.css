@@ -2,12 +2,12 @@
 @import url("grid.css");
 
 :root { /* 色変更される場合は、#以降のカラーコードを変更してください IE非対応 */
-    --base-color: #000;
+    --base-color: #ffca75;
     --link-color: #666;
     --linkhover-color: #999;
     --back-color: #f7f7f7;
     --border-color: #ccc;
-    --white-color: #fff;
+    --white-color: #000;
 }
 
 img {
@@ -90,7 +90,7 @@ nav ul {
 /* スマホ時はMENUボタンを表示 */
 #open {
     display: block;
-    background: url(../img/button.png);
+    background: url(button.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 50px;
@@ -102,7 +102,7 @@ nav ul {
 }
 #close  {
     display: block;
-    background: url(../img/button2.png);
+    background: url(button2.png);
     background-repeat: no-repeat;
     background-size: contain;
     width: 50px;
@@ -234,4 +234,41 @@ footer h4 {
 .table td {
 	display: block;
 }
+}
+/*フラッシュメッセージ
+-------------------------------------*/
+.flash-message {
+    border-radius: 5px;
+    padding: 16px 24px;
+    margin: 16px 0px;
+}
+   
+.flash-message.notice {
+    background-color: #bcdfff;
+    color: #0067C0;
+    border: solid 1px #0067C0;
+}
+   
+.flash-message.alert {
+    background-color: #ffd4d1;
+    color: #930403;
+    border: solid 1px #930403;
+}
+/*エラーメッセージ
+-------------------------------------*/
+.error_explanation {
+    color:#262626; 
+    background:#FFEBE8;
+    text-align: center;
+    border:2px solid #990000;
+    padding:12px;
+    width: 50%;
+    font-weight: 850;
+    margin:0 auto;
+}
+/*
+-------------------------------------*/
+.result {
+    width: 70%;
+    margin:0 auto;
 }

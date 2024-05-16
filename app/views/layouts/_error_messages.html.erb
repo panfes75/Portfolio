@@ -1,7 +1,7 @@
-<% if resource.errors.any? %>
+<% if model.errors.any? %>
   <div class="error_explanation">
     <ul class="list-unstyled">
-      <% resource.errors.full_messages.each do |message| %>
+      <% model.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>

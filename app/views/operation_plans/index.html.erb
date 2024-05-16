@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Operation plans</h1>
+
+<div id="operation_plans">
+  <% @operation_plans.each do |operation_plan| %>
+    <%= render operation_plan %>
+    <p>
+      <%= link_to "Show this operation plan", operation_plan %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New operation plan", new_operation_plan_path %>

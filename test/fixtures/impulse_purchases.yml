@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  purchase_amount: 1
+  hourly_wage: 1
+  operating_time: 2024-05-12 19:55:18
+  comment: MyString
+  privacy: 1
+  user: one
+
+two:
+  title: MyString
+  purchase_amount: 1
+  hourly_wage: 1
+  operating_time: 2024-05-12 19:55:18
+  comment: MyString
+  privacy: 1
+  user: two

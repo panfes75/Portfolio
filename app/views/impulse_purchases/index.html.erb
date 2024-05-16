@@ -1,0 +1,6 @@
+結果一覧だよ
+<div class="result">
+  <% @impulse_purchases.each do |impulse_purchase| %>
+    <%= render partial: "buy", locals: { impulse_purchase: impulse_purchase } %>
+  <% end %>
+</div>

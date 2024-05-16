@@ -41,7 +41,7 @@ $(function () {
 
 $(function(){
 	// メニューをクリック
-	$("a[href*=#]:not([href=#])").click(function(){
+	$('a[href*="#"]:not([href="#"])').click(function(){
 		// 移動先のコンテンツ位置を取得
 		var target = $($(this).attr("href")).offset().top;
 		// 50px減らす

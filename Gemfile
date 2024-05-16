@@ -47,10 +47,8 @@ gem "devise"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem 'bootstrap', '~> 5.3.2'
 gem 'execjs'
-gem 'autoprefixer-rails'
-gem "sassc-rails"
+gem 'sassc-rails'
 gem 'jquery-rails'
 
 group :development, :test do
@@ -83,3 +81,6 @@ group :test do
 end
 
 gem "dockerfile-rails", ">= 1.6", :group => :development
+
+gem 'rails-i18n'
+gem 'devise-i18n-views'
