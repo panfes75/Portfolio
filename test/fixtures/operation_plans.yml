@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_on: 2024-05-16
+  completion_on: 2024-05-16
+  remind: false
+  task: MyString
+  impulse_purchase: one
+
+two:
+  start_on: 2024-05-16
+  completion_on: 2024-05-16
+  remind: false
+  task: MyString
+  impulse_purchase: two

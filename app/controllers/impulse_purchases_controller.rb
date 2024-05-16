@@ -5,10 +5,6 @@ class ImpulsePurchasesController < ApplicationController
     @impulse_purchases = current_user.impulse_purchases.all.order(created_at: :desc)
   end
 
-  def top
-    @impulse_purchase = ImpulsePurchase.new
-  end
-
   def new
     @impulse_purchase = ImpulsePurchase.new
   end
@@ -19,19 +15,19 @@ class ImpulsePurchasesController < ApplicationController
       hourly_wage: params[:hourly_wage]
     })
     @impulse_purchase = current_user.impulse_purchases.build(merged_params)
-    if params[:comp]
-      @impulse_purchase.save
-      flash[:notice] = "完成"
-      redirect_to impulse_purchase_path(@impulse_purchase)
-    elsif params[:shift]
-      @impulse_purchase.save
-      flash[:notice] = "シフト作るよ"
-      redirect_to impulse_purchase_path(@impulse_purchase)
+    if @impulse_purchase.save
+      if params[:comp]
+        flash[:notice] = "完成"
+        redirect_to impulse_purchase_path(@impulse_purchase)
+      elsif params[:shift]
+        flash[:notice] = "シフト作るよ"
+        redirect_to new_impulse_purchase_operation_plan_path
+      end
     else
       render :new, status: :unprocessable_entity
     end
   end
-
+  
   def show
     @impulse_purchase = ImpulsePurchase.find(params[:id])
   end
@@ -46,10 +42,14 @@ class ImpulsePurchasesController < ApplicationController
       hourly_wage: params[:hourly_wage]
     })
     @impulse_purchase = current_user.impulse_purchases.find(params[:id])
-    if params[:comp]
-      @impulse_purchase.update(merged_params)
-      flash[:notice] = "更新しました。"
-      redirect_to impulse_purchase_path(@impulse_purchase)
+    if @impulse_purchase.update(merged_params)
+      if params[:comp]
+        flash[:notice] = "更新しました。"
+        redirect_to impulse_purchase_path(@impulse_purchase)
+      elsif params[:shift]
+        flash[:notice] = "シフト作るよ"
+        redirect_to new_operation_plan_path
+      end
     else
       render :edit, status: :unprocessable_entity
     end
