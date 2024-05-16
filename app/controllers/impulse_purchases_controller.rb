@@ -41,9 +41,15 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def update
+    merged_params = impulse_purchase_params.merge({
+      purchase_amount: params[:purchase_amount],
+      hourly_wage: params[:hourly_wage]
+    })
     @impulse_purchase = current_user.impulse_purchases.find(params[:id])
-    if @impulse_purchase.update(impulse_purchase_params)
-      redirect_to impulse_purchase_path(@impulse_purchase), flash[:notice] = "更新しました。"
+    if params[:comp]
+      @impulse_purchase.update(merged_params)
+      flash[:notice] = "更新しました。"
+      redirect_to impulse_purchase_path(@impulse_purchase)
     else
       render :edit, status: :unprocessable_entity
     end
@@ -63,6 +69,6 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def impulse_purchase_params
-    params.require(:impulse_purchase).permit(:title, :operating_time, :id)
+    params.require(:impulse_purchase).permit(:title, :operating_time)
   end
 end

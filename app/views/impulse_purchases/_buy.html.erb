@@ -1,13 +1,24 @@
 <section class="gray-back">
   <h2 class="center">
-    <span class="under">
-    <%= @impulse_purchase.title %> の購入を見送った！
-    </span>
+  <span class="under">
+    <%= impulse_purchase.title %> の購入を見送った！
+  </span>
   </h2>
   <h3 class="center">
-    購入金額:  <%= @impulse_purchase.purchase_amount %>  円
+    購入金額:  <%= impulse_purchase.purchase_amount %>  円
   </h3>
   <h3 class="center">
-    労働時間:  <%= @impulse_purchase.operating_time %>  時間
+    労働時間:  <%= impulse_purchase.operating_time %>  時間
   </h3>
+  <h3 class="center">
+    <%= impulse_purchase.comment %> 
+  </h3>
+  <div class="right">
+    <%= link_to '編集', edit_impulse_purchase_path(impulse_purchase.id), method: :get %>
+    <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), 
+      id: "button-delete-#{impulse_purchase.id}", 
+      method: :delete,
+      data: { turbo_confirm: "削除しますか？" } %>
+    <%= impulse_purchase.created_at.strftime("%Y-%m-%d %H:%M") %>
+  </div>
 </section>

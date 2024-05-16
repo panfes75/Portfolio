@@ -1,5 +1,4 @@
 <div class="result">
-  <%= render 'buy' %>
-  <%= link_to "Tweet", "https://twitter.com/share?ref_src=twsrc%5Etfw",  class: "twitter-share-button", size: "500x500", 'data-lang': "ja", 'data-show-count': "false" %>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  <h2>
+  <%= render 'buy', impulse_purchase: @impulse_purchase %>
 </div>
