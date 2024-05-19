@@ -6,7 +6,7 @@
     --link-color: #666;
     --linkhover-color: #999;
     --back-color: #f7f7f7;
-    --border-color: #ccc;
+    --border-color: #ffca75;
     --white-color: #000;
 }
 
@@ -130,7 +130,7 @@ main {
     margin: 5rem 0 0 0;
 }
 section {
-	margin: 5rem 0;
+	margin-bottom: 5rem;
 	padding: 3rem 0;
 }
 .gray-back {
@@ -141,6 +141,7 @@ section {
 -------------------------------------*/
 .catch {
     text-align: center;
+    margin-bottom: 5rem;
 }
 .catch h2 {
     padding-bottom: 1rem;
@@ -151,7 +152,7 @@ section {
 }
 .center {
 	text-align: center;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 }
 
 /*申し込みの流れ
@@ -164,26 +165,11 @@ section {
 -------------------------------------*/
 footer {
     background-color: var(--back-color); 
-    padding: 5rem 0;
+    padding-top: 2rem;
 }
 footer h4 {
     border-bottom: 3px solid var(--border-color);
 }
-
-/*お問い合わせ
--------------------------------------*/
-.contact-box {
-	border: 1px solid var(--border-color);
-	text-align: center;
-	padding: 2rem 0;
-}
-.table {
-	margin: 4rem 0;
-}
-.table th {
-	width: 250px;
-}
-
 /*コピーライト
 -------------------------------------*/
 .copyright {
@@ -211,30 +197,16 @@ footer h4 {
     width: 50px;
     padding: 10px 5px;
     text-align: center;
+    border: solid;
 }
 #pagetop a:hover {
     background-color: var(--link-color);
 }
-
-/* 幅768px以下の表示
--------------------------------------*/
-@media screen and (max-width: 768px){
-	
 /*ヘッダー
 -------------------------------------*/
 .header-box {
 	display: none;
 }	
-/*お問い合わせ
--------------------------------------*/
-.table th {
-	width: 100%;
-	display: block;
-}	
-.table td {
-	display: block;
-}
-}
 /*フラッシュメッセージ
 -------------------------------------*/
 .flash-message {

@@ -21,7 +21,7 @@ class ImpulsePurchasesController < ApplicationController
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
         flash[:notice] = "シフト作るよ"
-        redirect_to new_impulse_purchase_operation_plan_path
+        redirect_to new_impulse_purchase_operation_plan_path(@impulse_purchase)
       end
     else
       render :new, status: :unprocessable_entity
@@ -48,7 +48,7 @@ class ImpulsePurchasesController < ApplicationController
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
         flash[:notice] = "シフト作るよ"
-        redirect_to new_operation_plan_path
+        redirect_to 
       end
     else
       render :edit, status: :unprocessable_entity
@@ -69,6 +69,6 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def impulse_purchase_params
-    params.require(:impulse_purchase).permit(:title, :operating_time)
+    params.require(:impulse_purchase).permit(:impulse_purchase_id, :title, :operating_time)
   end
 end

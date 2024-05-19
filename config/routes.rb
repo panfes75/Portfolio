@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :impulse_purchases do
-    resources :operation_plans 
+    resources :operation_plans, shallow: true  do
+      resources :week_schedules, only: [:create]
+    end
   end
-  resources :week_schedules
 end

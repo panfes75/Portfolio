@@ -12,6 +12,7 @@ class OperationPlansController < ApplicationController
 
   # GET /operation_plans/new
   def new
+    @impulse_purchase = ImpulsePurchase.find(params[:impulse_purchase_id])
     @operation_plan = OperationPlan.new
   end
 
@@ -57,6 +58,10 @@ class OperationPlansController < ApplicationController
     end
   end
 
+  def start_time
+    created_at
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_operation_plan
@@ -65,6 +70,6 @@ class OperationPlansController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def operation_plan_params
-      params.require(:operation_plan).permit(:start_on, :completion_on, :remind, :task, :impulse_purchase_id)
+      params.require(:operation_plan).permit(:start_on, :completion_on, :remind, :task).merge(impulse_purchase_id: params[:board_id]) 
     end
 end

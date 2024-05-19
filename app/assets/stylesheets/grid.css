@@ -49,106 +49,101 @@ body {
     width: 100%;
 }
 /* 768px以上の表示 */
-@media ( min-width : 768px ) {
 .row {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  padding: 0;
 }
 .col {
-    margin-left: 4%;
+  margin-left: 4%;
 }
-	
+
 .col:first-child { 
-    margin-left: 0; 
+  margin-left: 0; 
 }
 
 .row .col.span-1 {
-    flex: 0 0 4.66666666667%;
-    max-width: 4.66666666667%;
+  flex: 0 0 4.66666666667%;
+  max-width: 4.66666666667%;
 }
 .row .col.span-2 {
-    flex: 0 0 13.3333333333%;
-    max-width: 13.3333333333%;
+  flex: 0 0 13.3333333333%;
+  max-width: 13.3333333333%;
 }
 .row .col.span-3 {
-    flex: 0 0 22%;
-    max-width: 22%;
+  flex: 0 0 22%;
+  max-width: 22%;
 }
 .row .col.span-4 {
-    flex: 0 0 30.6666666667%;
-    max-width: 30.6666666667%;
+  flex: 0 0 30.6666666667%;
+  max-width: 30.6666666667%;
 }
 .row .col.span-5 {
-    flex: 0 0 39.3333333333%;
-    max-width: 39.3333333333%;
+  flex: 0 0 39.3333333333%;
+  max-width: 39.3333333333%;
 }
 .row .col.span-6 {
-    flex: 0 0 48%;
-    max-width: 48%;
+  flex: 0 0 48%;
+  max-width: 48%;
 }
 .row .col.span-7 {
-    flex: 0 0 56.6666666667%;
-    max-width: 56.6666666667%;
+  flex: 0 0 56.6666666667%;
+  max-width: 56.6666666667%;
 }
 .row .col.span-8 {
-    flex: 0 0 65.3333333333%;
-    max-width: 65.3333333333%;
+  flex: 0 0 65.3333333333%;
+  max-width: 65.3333333333%;
 }
 .row .col.span-9 {
-    flex: 0 0 74.0%;
-    max-width: 74.0%;
+  flex: 0 0 74.0%;
+  max-width: 74.0%;
 }
 .row .col.span-10 {
-    flex: 0 0 82.6666666667%;
-    max-width: 82.6666666667%;
+  flex: 0 0 82.6666666667%;
+  max-width: 82.6666666667%;
 }
 .row .col.span-11 {
-    flex: 0 0 91.3333333333%;
-    max-width: 91.3333333333%;
+  flex: 0 0 91.3333333333%;
+  max-width: 91.3333333333%;
 }
 .row .col.span-12 {
-    flex: 0 0 100%;
-    max-width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
-
 /* オフセット */
 .row .col.offset-1 {
-    margin-left: 8.66666666667%;
+  margin-left: 8.66666666667%;
 }
 .row .col.offset-2 {
-    margin-left: 17.3333333333%;
+  margin-left: 17.3333333333%;
 }
 .row .col.offset-3 {
-    margin-left: 26%;
+  margin-left: 26%;
 }
 .row .col.offset-4 {
-    margin-left: 34.6666666667%;
+  margin-left: 34.6666666667%;
 }
 .row .col.offset-5 {
-    margin-left: 43.333333333%;
+  margin-left: 43.333333333%;
 }
 .row .col.offset-6 {
-    margin-left: 52%;
+  margin-left: 52%;
 }
 .row .col.offset-7 {
-    margin-left: 60.6666666667%;
+  margin-left: 60.6666666667%;
 }
 .row .col.offset-8 {
-    margin-left: 69.3333333333%;
+  margin-left: 69.3333333333%;
 }
 .row .col.offset-9 {
-    margin-left: 78.0%;
+  margin-left: 78.0%;
 }
 .row .col.offset-10 {
-    margin-left: 86.6666666667%;
+  margin-left: 86.6666666667%;
 }
 .row .col.offset-11 {
-    margin-left: 95.3333333333%;
-}    
-}
-
-
+  margin-left: 95.3333333333%;
+} 
 /* 見出し
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 h1, h2, h3, h4, h5, h6 {
@@ -387,3 +382,4 @@ hr {
 .right{
   text-align: right;
 }
+

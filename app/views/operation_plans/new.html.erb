@@ -1,9 +1,42 @@
-<h1>New operation plan</h1>
+<div class="center">
+<%= form_with model: [@impulse_purchase, @operation_plan] do |f| %>
+  <%= render 'layouts/error_messages', model: f.object %>
+  <div class="mb-3">
+  <div class="item-list">
+    <div class="item">
+      <%= f.label :monday_work_time, "月曜日" %>
+      <%= f.number_field :monday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :tuesday_work_time, "火曜日" %>
+      <%= f.number_field :tuesday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :wednesday_work_time, "水曜日" %>
+      <%= f.number_field :wednesday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :thursday_work_time, "木曜日" %>
+      <%= f.number_field :thursday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :friday_work_time, "金曜日" %>
+      <%= f.number_field :friday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :saturday_work_tim, "土曜日" %>
+      <%= f.number_field :saturday_work_time %>
+    </div>
+    <div class="item">
+      <%= f.label :sunday_work_time, "日曜日" %>
+      <%= f.number_field :sunday_work_time %>
+    </div>
+  </div>
+  </div>
+    <div class="mb-3">
+      <%= f.label :start_on %>
+      <%= f.date_field :start_on %>
+    </div>
+<% end %>
 
-<%= render "form", operation_plan: @operation_plan %>
-
-<br>
-
-<div>
-  <%= link_to "Back to operation plans", operation_plans_path %>
 </div>
