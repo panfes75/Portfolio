@@ -18,6 +18,8 @@ class OperationPlansController < ApplicationController
 
   # GET /operation_plans/1/edit
   def edit
+    @impulse_purchase = current_user.impulse_purchases.find(params[:id])
+    @operation_plan = current_user.operation_plan.new
   end
 
   # POST /operation_plans or /operation_plans.json

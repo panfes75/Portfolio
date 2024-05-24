@@ -48,7 +48,7 @@ class ImpulsePurchasesController < ApplicationController
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
         flash[:notice] = "シフト作るよ"
-        redirect_to 
+        redirect_to edit_impulse_purchase_operation_plan_path(@impulse_purchase)
       end
     else
       render :edit, status: :unprocessable_entity
