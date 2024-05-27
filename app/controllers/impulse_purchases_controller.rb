@@ -1,6 +1,5 @@
 class ImpulsePurchasesController < ApplicationController
   before_action :set_impulse_purchase, only: %i[edit update destroy]
-  skip_before_action :authenticate_user!, only: %i[new]
   def index
     @impulse_purchases = current_user.impulse_purchases.all.order(created_at: :desc)
   end

@@ -241,6 +241,101 @@ footer h4 {
 /*
 -------------------------------------*/
 .result {
-    width: 70%;
+    width: 50%;
     margin:0 auto;
 }
+
+/***　おしゃれテーブル5　ポルカドット ***/
+.osare5-table {
+    width:100%;
+    table-layout: fixed;
+      border: none !important;
+       border-collapse: separate;
+       border-spacing: 4px 4px;
+   }
+   
+   
+   .osare5-table th {
+      border: none !important;
+   }
+   
+   .osare5-table tbody td {
+     border: none !important;
+     background-color:var(--base-color) !important;
+     border-bottom: solid 2px #f9f9f9 !important;
+     background-size:30px 30px;
+     background-position: 0 0, 15px 15px;
+   
+   }
+   
+   /* ヘッダー */
+   .osare5-table thead th {
+     font-weight: bold;
+     border-radius: 5px 5px 5px 5px;
+     background:#f6f0ff;
+   }
+   
+   /* フッター（比較表と色つけたとき用） */
+   .osare5-table tfoot td {
+   border-radius: 0 0 10px 10px;
+   }
+    
+    
+   /* ボディ項目 */
+   .osare5-table tbody th {
+     border-radius: 5px 5px 5px 5px;
+     background:#fffcf0;
+     font-weight: bold;
+     border-bottom: solid 2px #f9f9f9 !important;
+     line-height:4.5em;
+   }
+    
+   /* フッター項目 */
+   .osare5-table tfoot th {
+    background:none;
+    line-height:3em;
+    font-weight: bold;
+   }
+   
+   
+   /* フッターデータ(フッターがあるときのみ有効) */
+   .osare5-hikaku tfoot td {
+    border: none !important;
+    background:none;
+    text-align:center;
+    font-weight:600;
+    font-size:1em;
+   }
+   
+    
+   /* ボディデータ */
+   .osare5-table tbody td {
+    text-align:center;
+   }
+    
+   .osare5-table thead th:first-child  {
+     background:none;
+   }
+   
+    
+   /* 最終行のボーダーをなくす */
+   .osare5-table tbody tr:last-child th,
+   .osare5-table tbody tr:last-child td {
+    border-bottom:none !important;
+   }
+   
+   /* スマホ調整 */
+   @media (max-width: 767px) {
+     .osare5-table thead th,
+     .osare5-table tbody th {
+         padding:0;
+     }
+     .osare5-table tfoot td {
+     padding:0;
+     font-size:0.9em;
+     }
+   .osare5-table tfoot td:nth-child(2) {
+      font-size:1em;
+     }
+     
+   }
