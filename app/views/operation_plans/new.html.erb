@@ -1,42 +1,17 @@
 <div class="center">
   <%= form_with model: [@impulse_purchase, @operation_plan] do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
-    <%= @impulse_purchase.operating_time %>
+    <div class="mb-3">
+      総稼働時間
+      <%= @impulse_purchase.operating_time %>
+    </div>
     <div class="mb-3">
       <div class="item-list">
         <div class="item">
-        <%= f.label :monday_work_time, "月曜日" %>
-        <%= f.number_field :monday_work_time, name: "mon" %> 分
+        <%= f.label :monday_work_time, "1日の稼働時間" %>
+        <%= f.number_field :monday_work_time, name: "mon", placeholder: "分単位で入力" %>
       </div>
-      <div class="item">
-        <%= f.label :tuesday_work_time, "火曜日" %>
-        <%= f.number_field :tuesday_work_time, name: "tue" %> 分
-      </div>
-      <div class="item">
-        <%= f.label :wednesday_work_time, "水曜日" %>
-        <%= f.number_field :wednesday_work_time, name: "wed" %> 分
-      </div>
-      <div class="item">
-        <%= f.label :thursday_work_time, "木曜日" %>
-        <%= f.number_field :thursday_work_time, name: "thu" %> 分
-      </div>
-      <div class="item">
-        <%= f.label :friday_work_time, "金曜日" %>
-        <%= f.number_field :friday_work_time, name: "fri" %> 分
-      </div>
-      <div class="item">
-        <%= f.label :saturday_work_tim, "土曜日" %>
-        <%= f.number_field :saturday_work_time, name: "sat" %> 分
-      </div>
-      <div class="item">
-        <%= f.label :sunday_work_time, "日曜日" %>
-        <%= f.number_field :sunday_work_time, name: "sun"  %> 分
-      </div>
-      <div class="item">
-        <%= f.label :start_on %>
-        <%= f.date_field :start_on %>
-      </div>
-      <input type="button" class="calc-btn" onclick="calc(mon.value, tue.value, wed.value, thu.value, fri.value, sat.value, sun.value);" value="計算">
+      <input type="button" class="calc-btn" onclick="calc(mon.value, time.value);" value="計算">
       <hr class="line">
       <h1>結果</h1>
       <div class="mb-3">
@@ -48,9 +23,8 @@
 </div>
 
 <script>
-  function calc(mon, tue, wed, thu, fri, sat, sun) {
-    const ary = [mon, tue, wed, thu, fri, sat, sun].map(Number);
+  function calc(mon, time) {
     const sum_value = document.getElementById('sum').value 
-                    = ary.reduce((accumulator,currentValue)=>accumulator+currentValue,0);
+                    = parseFloat((time / (mon/60)).toFixed(2));
   }
 </script>
