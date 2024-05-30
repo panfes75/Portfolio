@@ -1,1 +1,17 @@
-わしょい
+<div class="center">
+  <% @prefecture_minimum_wages.each do |prefecture_minimum_wage| %>
+    <%= prefecture_minimum_wage.name %>
+    <%= prefecture_minimum_wage.amount %>
+    <nav>
+      <ul>
+        <%= link_to '編集', edit_prefecture_minimum_wage_path(prefecture_minimum_wage.id), method: :get %>
+        <%= link_to '削除', prefecture_minimum_wage_path(prefecture_minimum_wage.id), 
+          id: "button-delete-#{prefecture_minimum_wage.id}", 
+          method: :delete,
+          data: { turbo_confirm: "削除しますか？" } %>
+      </ul>
+    </nav>
+    <br>
+  <% end %>
+  <%= link_to '追加する', new_prefecture_minimum_wage_path, class: "button" %>
+</div>

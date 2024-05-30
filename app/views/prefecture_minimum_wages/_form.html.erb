@@ -1,0 +1,15 @@
+<div class="center">
+  <%= form_with model: prefecture_minimum_wage,local:true  do |f| %> 
+    <div class="mb-3">
+      <%= f.label :name, "県名" %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :amount, "最低賃金" %>
+      <%= f.number_field :amount %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit  "保存する"%>
+    </div>
+  <% end %>
+</div>

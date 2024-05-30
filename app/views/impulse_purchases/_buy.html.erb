@@ -14,11 +14,15 @@
     <%= impulse_purchase.comment %> 
   </h3>
   <div class="right">
-    <%= link_to '編集', edit_impulse_purchase_path(impulse_purchase.id), method: :get %>
-    <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), 
-      id: "button-delete-#{impulse_purchase.id}", 
-      method: :delete,
-      data: { turbo_confirm: "削除しますか？" } %>
     <%= impulse_purchase.created_at.strftime("%Y-%m-%d %H:%M") %>
   </div>
+  <nav>
+    <div class="right">
+        <%= link_to '編集', edit_impulse_purchase_path(impulse_purchase.id), method: :get, class: "button" %>
+        <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), class: "button" , 
+          id: "button-delete-#{impulse_purchase.id}", 
+          method: :delete,
+          data: { turbo_confirm: "削除しますか？" } %>
+    </div>  
+  </nav>
 </section>

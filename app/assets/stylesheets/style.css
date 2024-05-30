@@ -19,6 +19,7 @@ a {
     color: var(--link-color);
     text-decoration-line: none;
 }
+
 a:hover { 
     color: var(--linkhover-color);
 }
@@ -41,7 +42,7 @@ a:hover {
 nav ul {
 	display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     list-style: none;
 	margin: 1rem 0 0 0;
 }
