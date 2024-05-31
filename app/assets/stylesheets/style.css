@@ -261,12 +261,8 @@ footer h4 {
    }
    
    .osare5-table tbody td {
-     border: none !important;
-     background-color:var(--base-color) !important;
-     border-bottom: solid 2px #f9f9f9 !important;
-     background-size:30px 30px;
-     background-position: 0 0, 15px 15px;
-   
+     border: solid;
+     border-color: var(--base-color);
    }
    
    /* ヘッダー */
@@ -307,7 +303,6 @@ footer h4 {
     font-weight:600;
     font-size:1em;
    }
-   
     
    /* ボディデータ */
    .osare5-table tbody td {
@@ -316,13 +311,6 @@ footer h4 {
     
    .osare5-table thead th:first-child  {
      background:none;
-   }
-   
-    
-   /* 最終行のボーダーをなくす */
-   .osare5-table tbody tr:last-child th,
-   .osare5-table tbody tr:last-child td {
-    border-bottom:none !important;
    }
    
    /* スマホ調整 */

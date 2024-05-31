@@ -3,7 +3,9 @@
     <%= render 'layouts/error_messages', model: f.object %>
     <div class="mb-3">
       総稼働時間
-      <%= @impulse_purchase.operating_time %>
+      <div id="time", data-json="<%= @impulse_purchase.operating_time %>">
+        <%= @impulse_purchase.operating_time %>
+      </div>
     </div>
     <div class="mb-3">
       <div class="item-list">
@@ -11,7 +13,7 @@
         <%= f.label :monday_work_time, "1日の稼働時間" %>
         <%= f.number_field :monday_work_time, name: "mon", placeholder: "分単位で入力" %>
       </div>
-      <input type="button" class="calc-btn" onclick="calc(mon.value, time.value);" value="計算">
+      <input type="button" class="calc-btn" onclick="calc(mon.value);" value="計算">
       <hr class="line">
       <h1>結果</h1>
       <div class="mb-3">
@@ -23,8 +25,8 @@
 </div>
 
 <script>
-  function calc(mon, time) {
+  function calc(mon) {
     const sum_value = document.getElementById('sum').value 
-                    = parseFloat((time / (mon/60)).toFixed(2));
+                    = parseFloat((time).toFixed(2));
   }
 </script>

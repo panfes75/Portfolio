@@ -1,32 +1,18 @@
+<h2 class="center">
+  <span class="under">
+    <%= impulse_purchase.title %> の購入スタンプカード
+  </span>
+</h2>
 <table class="osare5-table col5t">
 <tbody>
-<tr>
-<td>100</td>
-<td>90</td>
-<td>80</td>
-<td>70</td>
-<td>60</td>
-</tr>
-<tr>
-<td>100</td>
-<td>90</td>
-<td>80</td>
-<td>70</td>
-<td>60</td>
-</tr>
-<tr>
-<td>100</td>
-<td>90</td>
-<td>80</td>
-<td>70</td>
-<td>60</td>
-</tr>
-<tr>
-<td>100</td>
-<td>90</td>
-<td>80</td>
-<td>70</td>
-<td>60</td>
-</tr>
+<% for i in 1..21 do %>
+  <% if i==1 || (i - 5) == 1 %>
+    <tr>
+  <% end %>
+  <td> "i.to_s" </td>
+  <% if (i % 5) == 0 %>
+    </tr>
+  <% end %>
+<% end %>
 </tbody>
 </table>
