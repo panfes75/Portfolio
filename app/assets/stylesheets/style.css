@@ -340,3 +340,8 @@ footer h4 {
      }
      
    }
+
+   /* 印刷用設定 */
+    .print-off {
+      display: none;
+    }

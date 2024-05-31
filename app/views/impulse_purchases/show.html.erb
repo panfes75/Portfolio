@@ -1,3 +1,30 @@
 <div class="result">
-  <%= render 'buy', impulse_purchase: @impulse_purchase %>
+  <div class="print-area">
+    <section class="gray-back">
+      <% @impulse_purchase.each do |impulse_purchase| %>
+        <h2 class="center">
+          <span class="under">
+            <%= impulse_purchase.title %> の購入を見送った！
+          </span>
+        </h2>
+        <h3 class="center">
+          購入金額:  <%= impulse_purchase.purchase_amount %>  円
+        </h3>
+        <h3 class="center">
+          労働時間:  <%= impulse_purchase.operating_time %>  時間
+        </h3>
+        <h3 class="center">
+          <%= impulse_purchase.comment %> 
+        </h3>
+        <div class="right">
+          <%= impulse_purchase.created_at.strftime("%Y-%m-%d %H:%M") %>
+        </div>
+      <% end %>
+    </section>
+  </div>
+  <h3 class="center">
+    <button class="print-button">
+      <span>印刷／保存</span>
+    </button>
+  </h3>
 </div>
