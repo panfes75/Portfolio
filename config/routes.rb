@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   resources :impulse_purchases do
     resources :operation_plans, shallow: true  do
-      resources :week_schedules, only: [:create]
+      resources :week_schedules, only: [:create, :update]
     end
   end
 end

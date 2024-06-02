@@ -9,11 +9,7 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def create
-    merged_params = impulse_purchase_params.merge({
-      purchase_amount: params[:purchase_amount],
-      hourly_wage: params[:hourly_wage]
-    })
-    @impulse_purchase = current_user.impulse_purchases.build(merged_params)
+    @impulse_purchase = current_user.impulse_purchases.build(impulse_purchase_params)
     if @impulse_purchase.save
       if params[:comp]
         flash[:notice] = "完成"
@@ -35,12 +31,7 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def update
-    merged_params = impulse_purchase_params.merge({
-      purchase_amount: params[:purchase_amount],
-      hourly_wage: params[:hourly_wage]
-    })
-    @impulse_purchase = current_user.impulse_purchases.find(params[:id])
-    if @impulse_purchase.update(merged_params)
+    if @impulse_purchase.update(impulse_purchase_params)
       if params[:comp]
         flash[:notice] = "更新しました。"
         redirect_to impulse_purchase_path(@impulse_purchase)
@@ -66,6 +57,6 @@ class ImpulsePurchasesController < ApplicationController
   end
 
   def impulse_purchase_params
-    params.require(:impulse_purchase).permit(:impulse_purchase_id, :title, :operating_time)
+    params.require(:impulse_purchase).permit(:impulse_purchase_id, :title, :purchase_amount, :hourly_wage, :operating_time)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_27_141149) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_02_125925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,30 +18,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_27_141149) do
     t.string "title", null: false
     t.integer "purchase_amount", null: false
     t.integer "hourly_wage", null: false
-    t.decimal "operating_time", null: false
     t.string "comment"
     t.integer "privacy"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "operating_time", null: false
     t.index ["user_id"], name: "index_impulse_purchases_on_user_id"
   end
 
   create_table "operation_plans", force: :cascade do |t|
-    t.date "start_on"
-    t.date "completion_on"
-    t.boolean "remind"
     t.string "task"
     t.bigint "impulse_purchase_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "monday_work_time"
-    t.integer "tuesday_work_time"
-    t.integer "wednesday_work_time"
-    t.integer "thursday_work_time"
-    t.integer "friday_work_time"
-    t.integer "saturday_work_time"
-    t.integer "sunday_work_time"
+    t.integer "work_time"
+    t.integer "stamp"
     t.index ["impulse_purchase_id"], name: "index_operation_plans_on_impulse_purchase_id"
   end
 

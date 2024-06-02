@@ -7,11 +7,11 @@
       </div>
       <div class="mb-3">
         <%= f.label :purchase_amount, "購入金額" %>
-        <%= f.number_field :purchase_amount, name: "purchase_amount" %>
+        <%= f.number_field :purchase_amount, id: "purchase_amount" %>
       </div>
       <div class="mb-3">
         <%= f.label :hourly_wage, "時給選択" %>
-        <%= f.text_field :hourly_wage, list: "combolist", name: "hourly_wage", placeholder: "選択 または 自由入力" %>
+        <%= f.text_field :hourly_wage, list: "combolist", id: "hourly_wage", placeholder: "選択 または 自由入力" %>
         <datalist id="combolist">
           <option value=960>北海道</option>, <option value=898>青森県</option>, <option value=893>岩手県</option>, <option value=923>宮城県</option>, <option value=897>秋田県</option>
           <option value=900>山形県</option>, <option value=900>福島県</option>, <option value=953>茨城県</option>, <option value=954>栃木県</option>, <option value=935>群馬県</option>
