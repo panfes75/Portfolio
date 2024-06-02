@@ -2,8 +2,10 @@
   <% @impulse_purchases.each do |impulse_purchase| %>
     <% if impulse_purchase.nil? %>
       <h2>ありません</h2> 
+    <% elsif impulse_purchase.operation_plan.nil? %>
+      <%= render "buy", impulse_purchase: impulse_purchase %>
     <% else %>
-      <%= render partial: "buy", locals: { impulse_purchase: impulse_purchase } %>
+      <%= render "card", impulse_purchase: impulse_purchase %>
     <% end %>
   <% end %>
 </div>

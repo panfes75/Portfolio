@@ -1,18 +1,35 @@
+<section class="gray-back">
 <h2 class="center">
   <span class="under">
     <%= impulse_purchase.title %> の購入スタンプカード
   </span>
+  <h3 class="center">
+    やること:  <%= impulse_purchase.operation_plan.task %>
+  </h3>
+  <h3 class="center">
+    購入金額:  <%= impulse_purchase.purchase_amount %>  円
+  </h3>
+  <h3 class="center">
+    総稼働時間:  <%= impulse_purchase.operating_time %>  時間
+  </h3>
 </h2>
 <table class="osare5-table col5t">
 <tbody>
-<% for i in 1..21 do %>
+<% for i in 1..impulse_purchase.operation_plan.stamp do %>
   <% if i==1 || (i - 5) == 1 %>
     <tr>
   <% end %>
-  <td> "i.to_s" </td>
+  <td>
+    <span class="under"><%= i.to_s %></span><br>
+    (<%= impulse_purchase.operation_plan.work_time %>分)
+  </td>
   <% if (i % 5) == 0 %>
     </tr>
   <% end %>
 <% end %>
 </tbody>
 </table>
+<div class="right">
+    <%= render "button", impulse_purchase: impulse_purchase %>
+</div> 
+</section>

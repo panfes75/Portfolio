@@ -149,7 +149,6 @@ section {
 }
 .under {
     border-bottom: 0.4rem solid var(--base-color);
-    padding:0 1rem 1rem 1rem;
 }
 .center {
 	text-align: center;
@@ -246,7 +245,7 @@ footer h4 {
     margin:0 auto;
 }
 
-/***　おしゃれテーブル5　ポルカドット ***/
+/*　おしゃれテーブル5　ポルカドット */
 .osare5-table {
     width:100%;
     table-layout: fixed;

@@ -15,7 +15,7 @@ class ImpulsePurchasesController < ApplicationController
         flash[:notice] = "完成"
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
-        flash[:notice] = "シフト作るよ"
+        flash[:notice] = "スタンプカード"
         redirect_to new_impulse_purchase_operation_plan_path(@impulse_purchase)
       end
     else
@@ -36,7 +36,7 @@ class ImpulsePurchasesController < ApplicationController
         flash[:notice] = "更新しました。"
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
-        flash[:notice] = "シフト作るよ"
+        flash[:notice] = "スタンプカード"
         redirect_to edit_impulse_purchase_operation_plan_path(@impulse_purchase)
       end
     else
