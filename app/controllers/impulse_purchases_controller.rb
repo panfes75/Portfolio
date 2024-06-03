@@ -12,10 +12,10 @@ class ImpulsePurchasesController < ApplicationController
     @impulse_purchase = current_user.impulse_purchases.build(impulse_purchase_params)
     if @impulse_purchase.save
       if params[:comp]
-        flash[:notice] = "完成"
+        flash[:notice] = "完成しました"
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
-        flash[:notice] = "スタンプカード"
+        flash[:notice] = "スタンプカードを作成します"
         redirect_to new_impulse_purchase_operation_plan_path(@impulse_purchase)
       end
     else
@@ -33,11 +33,18 @@ class ImpulsePurchasesController < ApplicationController
   def update
     if @impulse_purchase.update(impulse_purchase_params)
       if params[:comp]
-        flash[:notice] = "更新しました。"
+        if @impulse_purchase.operation_plan.present?
+          @impulse_purchase.operation_plan.destroy!
+        end
+        flash[:notice] = "更新しました"
         redirect_to impulse_purchase_path(@impulse_purchase)
       elsif params[:shift]
-        flash[:notice] = "スタンプカード"
-        redirect_to edit_impulse_purchase_operation_plan_path(@impulse_purchase)
+        flash[:notice] = "スタンプカードを作成します"
+        if @impulse_purchase.operation_plan.present?
+          redirect_to edit_impulse_purchase_operation_plan_path(@impulse_purchase)
+        else
+          redirect_to new_impulse_purchase_operation_plan_path(@impulse_purchase)
+        end
       end
     else
       render :edit, status: :unprocessable_entity
@@ -46,7 +53,7 @@ class ImpulsePurchasesController < ApplicationController
 
   def destroy
     @impulse_purchase.destroy!
-    flash[:notice] = "削除しました。"
+    flash[:notice] = "削除しました"
     redirect_to impulse_purchases_path
   end
 

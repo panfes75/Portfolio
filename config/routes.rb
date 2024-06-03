@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :prefecture_minimum_wages
 
   resources :impulse_purchases do
-    resources :operation_plans, shallow: true
+    resources :operation_plans
   end
 end

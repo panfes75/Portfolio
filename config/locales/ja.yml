@@ -20,3 +20,7 @@ ja:
       prefecture_minimum_wage:
         name: 県名
         amount: 最低賃金
+      operation_plan:
+        task: やること
+        work_time: 1日の稼働時間
+        stamp: 結果
