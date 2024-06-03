@@ -2,14 +2,23 @@
   <div class="result">
     <% @impulse_purchase.each do |impulse_purchase| %>
       <% if impulse_purchase.nil? %>
-    <h2>ありません</h2> 
-    <% elsif impulse_purchase.operation_plan.nil? %>
-      <%= render "buy", impulse_purchase: impulse_purchase %>
-    <% else %>
-      <%= render "card", impulse_purchase: impulse_purchase %>
+        <h2>ありません</h2> 
+      <% elsif impulse_purchase.operation_plan.nil? %>
+        <section class="gray-back">
+          <%= render "buy", impulse_purchase: impulse_purchase %>
+          <div class="right">
+            <%= render "button", impulse_purchase: impulse_purchase %>
+          </div>
+        </section>
+      <% else %>
+        <section class="gray-back">
+          <%= render "card", impulse_purchase: impulse_purchase %>
+          <div class="right">
+            <%= render "button", impulse_purchase: impulse_purchase %>
+          </div>
+        </section>
+      <% end %>
     <% end %>
-  <% end %>
-
   </div>
 </div>  
 <h3 class="center">

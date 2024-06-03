@@ -3,9 +3,19 @@
     <% if impulse_purchase.nil? %>
       <h2>ありません</h2> 
     <% elsif impulse_purchase.operation_plan.nil? %>
-      <%= render "buy", impulse_purchase: impulse_purchase %>
+      <section class="gray-back">
+        <%= render "buy", impulse_purchase: impulse_purchase %>
+        <div class="right">
+          <%= render "button", impulse_purchase: impulse_purchase %>
+        </div>
+      </section>
     <% else %>
-      <%= render "card", impulse_purchase: impulse_purchase %>
+      <section class="gray-back">
+        <%= render "card", impulse_purchase: impulse_purchase %>
+        <div class="right">
+          <%= render "button", impulse_purchase: impulse_purchase %>
+        </div>
+      </section>
     <% end %>
   <% end %>
 </div>

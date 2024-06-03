@@ -1,4 +1,5 @@
 <nav>
+  <%= link_to '詳細', impulse_purchase_path(impulse_purchase.id), method: :get, class: "button" %>
   <%= link_to '編集', edit_impulse_purchase_path(impulse_purchase.id), method: :get, class: "button" %>
     <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), class: "button" , 
       id: "button-delete-#{impulse_purchase.id}", 
