@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_16_141156) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_02_181724) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -18,24 +18,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_141156) do
     t.string "title", null: false
     t.integer "purchase_amount", null: false
     t.integer "hourly_wage", null: false
-    t.decimal "operating_time", null: false
     t.string "comment"
     t.integer "privacy"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "operating_time", null: false
     t.index ["user_id"], name: "index_impulse_purchases_on_user_id"
   end
 
   create_table "operation_plans", force: :cascade do |t|
-    t.date "start_on"
-    t.date "completion_on"
-    t.boolean "remind"
-    t.string "task"
+    t.string "task", null: false
     t.bigint "impulse_purchase_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "work_time", null: false
+    t.integer "stamp", null: false
     t.index ["impulse_purchase_id"], name: "index_operation_plans_on_impulse_purchase_id"
+  end
+
+  create_table "prefecture_minimum_wages", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "amount", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,21 +59,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_141156) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "week_schedules", force: :cascade do |t|
-    t.integer "monday_work_time"
-    t.integer "tuesday_work_time"
-    t.integer "Wednes_daywork_time"
-    t.integer "Thursday_work_time"
-    t.integer "Friday_work_time"
-    t.integer "Saturday_work_time"
-    t.integer "Sunday_work_time"
-    t.bigint "operation_plan_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["operation_plan_id"], name: "index_week_schedules_on_operation_plan_id"
-  end
-
   add_foreign_key "impulse_purchases", "users"
   add_foreign_key "operation_plans", "impulse_purchases"
-  add_foreign_key "week_schedules", "operation_plans"
 end

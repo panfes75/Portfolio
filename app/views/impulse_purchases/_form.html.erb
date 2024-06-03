@@ -1,5 +1,5 @@
 <div class="center">
-  <%= form_with model: @impulse_purchase, local:true  do |f| %> 
+  <%= form_with model: impulse_purchase, local:true  do |f| %> 
     <%= render 'layouts/error_messages', model: f.object %>
       <div class="mb-3">
         <%= f.label :title, "タイトル" %>
@@ -7,15 +7,22 @@
       </div>
       <div class="mb-3">
         <%= f.label :purchase_amount, "購入金額" %>
-        <%= f.number_field :purchase_amount, name: "purchase_amount" %>
+        <%= f.number_field :purchase_amount, id: "purchase_amount" %>
       </div>
       <div class="mb-3">
         <%= f.label :hourly_wage, "時給選択" %>
-        <%= f.text_field :hourly_wage, list: "combolist", name: "hourly_wage" %>
+        <%= f.text_field :hourly_wage, list: "combolist", id: "hourly_wage", placeholder: "選択 または 自由入力" %>
         <datalist id="combolist">
-          <option value=100>青森</option>
-          <option value=200>秋田</option>
-          <option value=300>東京</option>
+          <option value=960>北海道</option>, <option value=898>青森県</option>, <option value=893>岩手県</option>, <option value=923>宮城県</option>, <option value=897>秋田県</option>
+          <option value=900>山形県</option>, <option value=900>福島県</option>, <option value=953>茨城県</option>, <option value=954>栃木県</option>, <option value=935>群馬県</option>
+          <option value=1028>埼玉県</option>, <option value=1026>千葉県</option>, <option value=1113>東京都</option>, <option value=1112>神奈川県</option>, <option value=931>新潟県</option>
+          <option value=948>富山県</option>, <option value=933>石川県</option>, <option value=931>福井県</option>, <option value=938>山梨県</option>, <option value=948>長野県</option>
+          <option value=950>岐阜県</option>, <option value=984>静岡県 </option>, <option value=1027>愛知県</option>, <option value=973>三重県</option>, <option value=967>滋賀県</option>
+          <option value=1008>京都府</option>, <option value=1064>大阪府 </option>, <option value=1001>兵庫県</option>, <option value=936>奈良県</option>, <option value=929>和歌山県</option>
+          <option value=900>鳥取県</option>, <option value=904>島根県 </option>, <option value=932>岡山県</option>, <option value=970>広島県</option>, <option value=928>山口県</option>
+          <option value=896>徳島県</option>, <option value=918>香川県</option>, <option value=897>愛媛県</option>, <option value=897>高知県</option>, <option value=941>福岡県</option>
+          <option value=900>佐賀県</option>, <option value=898>長崎県</option>, <option value=898>熊本県</option>, <option value=899>大分県</option>, <option value=897>宮崎県</option>
+          <option value=897>鹿児島県</option>, <option value=896>沖縄県</option>
         </datalist>
       </div>
       <input type="button" class="calc-btn" onclick="calc(purchase_amount.value, hourly_wage.value);" value="計算">
@@ -26,14 +33,14 @@
         <%= f.number_field :operating_time, id: "time", readonly: "", size: "20x10" %> 時間分の労働が必要です。
       </div>
       <div class="mb-3">
-        <%= f.submit  "購入を見送る？", name: "shift" %>
-        <%= f.submit  "購入する？", name: "comp" %>
+        <%= f.submit  "購入する!", name: "shift" %>
+        <%= f.submit  "購入を見送る!", name: "comp" %>
       </div>
   <% end %>
 </div>
 
 <script>
   function calc(purchase_amount, hourly_wage) {
-      const time_value = document.getElementById('time').value = parseFloat((purchase_amount / hourly_wage).toFixed(2));
+    const time_value = document.getElementById('time').value = parseFloat((purchase_amount / hourly_wage).toFixed(2));
   }
 </script>

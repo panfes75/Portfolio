@@ -1,4 +1,7 @@
 class OperationPlan < ApplicationRecord
   belongs_to :impulse_purchase
-  has_one :week_schedule, dependent: :destroy
+
+  validates :task, presence: true
+  validates :work_time, presence: true
+  validates :stamp, presence: true
 end

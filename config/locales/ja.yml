@@ -3,6 +3,7 @@ ja:
     models:
       user: ユーザー 
       impulse_purchase: 衝動買い
+      prefecture_minimum_wage: 都道府県最低賃金
     attributes:
       user: 
         nickname: 名前
@@ -16,3 +17,10 @@ ja:
         operating_time: 労働時間
         comment: コメント
         privacy: 公開設定
+      prefecture_minimum_wage:
+        name: 県名
+        amount: 最低賃金
+      operation_plan:
+        task: やること
+        work_time: 1日の稼働時間
+        stamp: 結果

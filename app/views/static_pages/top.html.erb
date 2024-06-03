@@ -4,30 +4,77 @@
 <main>
   <div class="catch">
     <h2><span class="under">I’ll buy that!</span></h2>
-    <p>ー ついつい衝動買いをしてしまう人のための衝動買い管理ツール ー
-    <br>衝動買い金額から算出した労働時間を使って、衝動買いを防止したり、購入した後の後悔や罪悪感を減らすためのシフトカレンダーを作成することができます。</p>
-    <%= link_to '計画する', new_impulse_purchase_path %>
+    <p>ー ついつい衝動買いをしてしまう人のための衝動買い管理ツール ー<br>
+    <br>衝動買い金額から算出した労働時間を使って、衝動買いを防止したり、<br>
+    購入した後の後悔や罪悪感を減らすためのシフトカレンダーを作成することができます。</p>
+    <%= link_to '計算する', new_impulse_purchase_path, class: "button" %>
   </div>
-  <section id="1" class="gray-back">
-    <h2 class="center"><span class="under">サービスの使い方</span></h2>
-    <div class="container center">
-      <div class="row">
-        <div class="col span-4">
-          <%= image_tag("product.jpg") %>
-		      <h3>1.</h3>
-		      <p>ここに説明文が入ります</p>
+  <div class="container">
+    <div class="swiper">
+      <h2 class="center"><span class="under">サービスの使い方</span></h2>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <section id="1" class="gray-back">
+            <h2 class="center"><span class="under">サービスの使い方</span></h2>
+            <div class="container center">
+              <div class="row">
+                <%= image_tag("product.jpg") %>
+		            <h3>1.</h3>
+		            <p>ここに説明文が入ります</p>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="col span-4">
-          <%= image_tag("product.jpg") %>
-            <h3>ここに商品が入ります</h3>
-		        <p>ここに説明文が入ります</p>
+        <div class="swiper-slide">
+          <section id="1" class="gray-back">
+            <h2 class="center"><span class="under">サービスの使い方</span></h2>
+            <div class="container center">
+              <div class="row">
+                  <%= image_tag("product.jpg") %>
+                  <h3>1.</h3>
+                  <p>ここに説明文が入ります</p>
+              </div>
+            </div>
+          </section>
         </div>
-        <div class="col span-4">
-          <%= image_tag("product.jpg") %>
-		      <h3>ここに商品が入ります</h3>
-		      <p>ここに説明文が入ります</p>
+        <div class="swiper-slide">
+          <section id="1" class="gray-back">
+            <h2 class="center"><span class="under">シフトが完成</span></h2>
+            <div class="container center">
+              <div class="row">
+                <%= image_tag("product.jpg") %>
+                <div class="col span-4">
+                  <p>ここに説明文が入ります</p>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
-	  </div>
-  </section>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <script>
+    const swiper = new Swiper(".swiper", {
+    loop: true, // ループ
+    speed: 3000, // 少しゆっくり(デフォルトは300)
+    autoplay: { // 自動再生
+      delay: 10000, // 1秒後に次のスライド
+      disableOnInteraction: false, // 矢印をクリックしても自動再生を止めない
+    },
+    // ページネーション
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    // 前後の矢印
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  </script>
+</div>
 </main>

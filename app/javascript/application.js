@@ -11,6 +11,7 @@ Turbo.session.drive = false
 import "./controllers/application";
 import "./controllers/hello_controller";
 import "./menu";
+import "./print";
 
 document.addEventListener('turbo:load', () => {
   document.querySelectorAll('a[data-turbo-confirm]').forEach((element) => {
@@ -22,3 +23,4 @@ document.addEventListener('turbo:load', () => {
     });
   });
 });
+

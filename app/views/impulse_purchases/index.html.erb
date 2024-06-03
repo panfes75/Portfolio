@@ -1,6 +1,21 @@
-結果一覧だよ
 <div class="result">
   <% @impulse_purchases.each do |impulse_purchase| %>
-    <%= render partial: "buy", locals: { impulse_purchase: impulse_purchase } %>
+    <% if impulse_purchase.nil? %>
+      <h2>ありません</h2> 
+    <% elsif impulse_purchase.operation_plan.nil? %>
+      <section class="gray-back">
+        <%= render "buy", impulse_purchase: impulse_purchase %>
+        <div class="right">
+          <%= render "button", impulse_purchase: impulse_purchase %>
+        </div>
+      </section>
+    <% else %>
+      <section class="gray-back">
+        <%= render "card", impulse_purchase: impulse_purchase %>
+        <div class="right">
+          <%= render "button", impulse_purchase: impulse_purchase %>
+        </div>
+      </section>
+    <% end %>
   <% end %>
 </div>

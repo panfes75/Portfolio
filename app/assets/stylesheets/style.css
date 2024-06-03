@@ -6,7 +6,7 @@
     --link-color: #666;
     --linkhover-color: #999;
     --back-color: #f7f7f7;
-    --border-color: #ccc;
+    --border-color: #ffca75;
     --white-color: #000;
 }
 
@@ -19,6 +19,7 @@ a {
     color: var(--link-color);
     text-decoration-line: none;
 }
+
 a:hover { 
     color: var(--linkhover-color);
 }
@@ -41,7 +42,7 @@ a:hover {
 nav ul {
 	display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     list-style: none;
 	margin: 1rem 0 0 0;
 }
@@ -130,7 +131,7 @@ main {
     margin: 5rem 0 0 0;
 }
 section {
-	margin: 5rem 0;
+	margin-bottom: 5rem;
 	padding: 3rem 0;
 }
 .gray-back {
@@ -141,17 +142,17 @@ section {
 -------------------------------------*/
 .catch {
     text-align: center;
+    margin-bottom: 5rem;
 }
 .catch h2 {
     padding-bottom: 1rem;
 }
 .under {
     border-bottom: 0.4rem solid var(--base-color);
-    padding:0 1rem 1rem 1rem;
 }
 .center {
 	text-align: center;
-	margin-bottom: 4rem;
+	margin-bottom: 2rem;
 }
 
 /*申し込みの流れ
@@ -164,26 +165,11 @@ section {
 -------------------------------------*/
 footer {
     background-color: var(--back-color); 
-    padding: 5rem 0;
+    padding-top: 2rem;
 }
 footer h4 {
     border-bottom: 3px solid var(--border-color);
 }
-
-/*お問い合わせ
--------------------------------------*/
-.contact-box {
-	border: 1px solid var(--border-color);
-	text-align: center;
-	padding: 2rem 0;
-}
-.table {
-	margin: 4rem 0;
-}
-.table th {
-	width: 250px;
-}
-
 /*コピーライト
 -------------------------------------*/
 .copyright {
@@ -211,30 +197,16 @@ footer h4 {
     width: 50px;
     padding: 10px 5px;
     text-align: center;
+    border: solid;
 }
 #pagetop a:hover {
     background-color: var(--link-color);
 }
-
-/* 幅768px以下の表示
--------------------------------------*/
-@media screen and (max-width: 768px){
-	
 /*ヘッダー
 -------------------------------------*/
 .header-box {
 	display: none;
 }	
-/*お問い合わせ
--------------------------------------*/
-.table th {
-	width: 100%;
-	display: block;
-}	
-.table td {
-	display: block;
-}
-}
 /*フラッシュメッセージ
 -------------------------------------*/
 .flash-message {
@@ -269,6 +241,94 @@ footer h4 {
 /*
 -------------------------------------*/
 .result {
-    width: 70%;
+    width: 50%;
     margin:0 auto;
 }
+
+/*　おしゃれテーブル5　ポルカドット */
+.osare5-table {
+    width:100%;
+    table-layout: fixed;
+      border: none !important;
+       border-collapse: separate;
+       border-spacing: 4px 4px;
+   }
+   
+   
+   .osare5-table th {
+      border: none !important;
+   }
+   
+   .osare5-table tbody td {
+     border: solid;
+     border-color: var(--base-color);
+   }
+   
+   /* ヘッダー */
+   .osare5-table thead th {
+     font-weight: bold;
+     border-radius: 5px 5px 5px 5px;
+     background:#f6f0ff;
+   }
+   
+   /* フッター（比較表と色つけたとき用） */
+   .osare5-table tfoot td {
+   border-radius: 0 0 10px 10px;
+   }
+    
+    
+   /* ボディ項目 */
+   .osare5-table tbody th {
+     border-radius: 5px 5px 5px 5px;
+     background:#fffcf0;
+     font-weight: bold;
+     border-bottom: solid 2px #f9f9f9 !important;
+     line-height:4.5em;
+   }
+    
+   /* フッター項目 */
+   .osare5-table tfoot th {
+    background:none;
+    line-height:3em;
+    font-weight: bold;
+   }
+   
+   
+   /* フッターデータ(フッターがあるときのみ有効) */
+   .osare5-hikaku tfoot td {
+    border: none !important;
+    background:none;
+    text-align:center;
+    font-weight:600;
+    font-size:1em;
+   }
+    
+   /* ボディデータ */
+   .osare5-table tbody td {
+    text-align:center;
+   }
+    
+   .osare5-table thead th:first-child  {
+     background:none;
+   }
+   
+   /* スマホ調整 */
+   @media (max-width: 767px) {
+     .osare5-table thead th,
+     .osare5-table tbody th {
+         padding:0;
+     }
+     .osare5-table tfoot td {
+     padding:0;
+     font-size:0.9em;
+     }
+   .osare5-table tfoot td:nth-child(2) {
+      font-size:1em;
+     }
+     
+   }
+
+   /* 印刷用設定 */
+    .print-off {
+      display: none;
+    }
