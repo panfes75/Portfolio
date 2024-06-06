@@ -5,8 +5,8 @@
   <div class="catch">
     <h2><span class="under">I’ll buy that!</span></h2>
     <p>ー ついつい衝動買いをしてしまう人のための衝動買い管理ツール ー<br>
-    <br>衝動買い金額から算出した労働時間を使って、衝動買いを防止したり、<br>
-    購入した後の後悔や罪悪感を減らすためのシフトカレンダーを作成することができます。</p>
+    <br>衝動買い金額から算出した労働時間を使用して<br>
+    衝動買いを防止したり、スタンプカードを作成することができます。</p>
     <%= link_to '計算する', new_impulse_purchase_path, class: "button" %>
   </div>
   <div class="container">
@@ -15,38 +15,41 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <section id="1" class="gray-back">
-            <h2 class="center"><span class="under">サービスの使い方</span></h2>
+            <h2 class="center"><span class="under">1.計算をします</span></h2>
             <div class="container center">
               <div class="row">
-                <%= image_tag("product.jpg") %>
-		            <h3>1.</h3>
-		            <p>ここに説明文が入ります</p>
+                <%= image_tag("ex_1.png") %>
               </div>
+		          <p>『タイトル』、『購入金額』、『時給』を入力し『計算』をクリックします。<br>
+              すると購入に必要な『労働時間』が算出されるので、『購入する』か『購入を見送る』を選択します。
+              </p>
             </div>
           </section>
         </div>
         <div class="swiper-slide">
           <section id="1" class="gray-back">
-            <h2 class="center"><span class="under">サービスの使い方</span></h2>
+            <h2 class="center"><span class="under">2.スタンプカードの作成</span></h2>
             <div class="container center">
               <div class="row">
-                  <%= image_tag("product.jpg") %>
-                  <h3>1.</h3>
-                  <p>ここに説明文が入ります</p>
+                  <%= image_tag("ex_2.png") %>
               </div>
+              <p>『購入する』を選択後は
+              『やること』、『1日の稼働時間』を入力し『計算』をクリックするとスタンプ回数を算出します。<br>
+              完成したスタンプカードは印刷することができます。
+              </p>
             </div>
           </section>
         </div>
         <div class="swiper-slide">
           <section id="1" class="gray-back">
-            <h2 class="center"><span class="under">シフトが完成</span></h2>
+            <h2 class="center"><span class="under">3.過去の計算も保存されます</span></h2>
             <div class="container center">
               <div class="row">
-                <%= image_tag("product.jpg") %>
-                <div class="col span-4">
-                  <p>ここに説明文が入ります</p>
-                </div>
+                <%= image_tag("ex_3.png") %>
               </div>
+              <p>『履歴』からは過去に計算したものを確認できます。<br>
+              『詳細』から印刷ができたり、『編集』から再度作り直すこともできます。<br>
+              </p>
             </div>
           </section>
         </div>

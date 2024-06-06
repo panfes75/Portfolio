@@ -3,7 +3,7 @@
     <%= render 'layouts/error_messages', model: f.object %>
       <div class="mb-3">
         <%= f.label :title, "タイトル" %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, placeholder: "購入品名" %>
       </div>
       <div class="mb-3">
         <%= f.label :purchase_amount, "購入金額" %>
