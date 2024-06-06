@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for ill-buy-that on 2024-04-16T22:53:05+09:00
+# fly.toml app configuration file generated for ill-buy-that on 2024-06-03T20:44:31+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -36,7 +36,9 @@ console_command = '/rails/bin/rails console'
       X-Forwarded-Proto = 'https'
 
 [[vm]]
-  size = 'shared-cpu-1x'
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
 
 [[statics]]
   guest_path = '/rails/public'
