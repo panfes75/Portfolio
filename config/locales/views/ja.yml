@@ -1,0 +1,37 @@
+ja:
+  defaults:
+  static_pages:
+    top:
+      title: 'トップ'
+    term:
+      title: '利用規約'
+    privacy:
+      title: 'プライバシーポリシー'
+  devise:
+    sessions:
+      new:
+        title: 'ログイン'
+    registrations:
+      new:
+        title: '会員登録'
+  impulse_purchases:
+    index:
+      title: '履歴'
+    new:
+      title: '計算'
+    show:
+      title: '詳細'
+    edit:
+      title: '編集'
+  operation_plans:
+    new:
+      title: '計算'
+    edit:
+      title: '編集'
+  prefecture_minimum_wages:
+    index:
+      title: '一覧'
+    new:
+      title: '時給追加'
+    edit:
+      title: '編集'

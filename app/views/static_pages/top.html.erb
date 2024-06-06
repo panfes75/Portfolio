@@ -1,3 +1,4 @@
+<% content_for(t('.title')) %>
 <div class="mainimg">
   <%= image_tag("mainimg.jpg") %>
 </div>
@@ -6,7 +7,7 @@
     <h2><span class="under">I’ll buy that!</span></h2>
     <p>ー ついつい衝動買いをしてしまう人のための衝動買い管理ツール ー<br>
     <br>衝動買い金額から算出した労働時間を使用して<br>
-    衝動買いを防止したり、スタンプカードを作成することができます。</p>
+    衝動買いを防止したり、購入金額分の稼働スタンプカードを作成することができます。</p>
     <%= link_to '計算する', new_impulse_purchase_path, class: "button" %>
   </div>
   <div class="container">
