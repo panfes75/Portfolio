@@ -10,6 +10,7 @@ AllCops:
     - 'spec/**/*'
     - 'node_modules/**/*'
     - 'config/**/*'
+    - 'test/**/*'
     - 'config.ru'
     - 'Gemfile'
     - 'Rakefile'

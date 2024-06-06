@@ -245,6 +245,15 @@ footer h4 {
     margin:0 auto;
 }
 
+.result-static {
+    width: 90%;
+    margin:0 auto;
+}
+
+.result-static_area {
+    padding: 60px;
+}
+
 /*　おしゃれテーブル5　ポルカドット */
 .osare5-table {
     width:100%;

@@ -1,6 +1,6 @@
 class OperationPlansController < ApplicationController
-  before_action :set_operation_plan, only: [:update]
-  before_action :set_impulse_purchase, only: [:new, :create, :edit, :update]
+  before_action :set_operation_plan, only: %i[update]
+  before_action :set_impulse_purchase, only: %i[new create edit update]
   def new
     @operation_plan = OperationPlan.new
   end
@@ -9,10 +9,10 @@ class OperationPlansController < ApplicationController
     @operation_plan = OperationPlan.new(operation_plan_params)
     @operation_plan.impulse_purchase_id = @impulse_purchase.id
     if @operation_plan.save
-      flash[:notice] = "保存しました"
+      flash[:notice] = '保存しました'
       redirect_to impulse_purchase_path(@operation_plan.impulse_purchase_id)
     else
-      flash[:alert] = "保存できません"
+      flash[:alert] = '保存できません'
       render :new, status: :unprocessable_entity
     end
   end
@@ -23,7 +23,7 @@ class OperationPlansController < ApplicationController
 
   def update
     if @operation_plan.update(operation_plan_params)
-      flash[:notice] = "更新しました。"
+      flash[:notice] = '更新しました'
       redirect_to impulse_purchase_path(@impulse_purchase)
     else
       render :edit, status: :unprocessable_entity
@@ -41,6 +41,6 @@ class OperationPlansController < ApplicationController
   end
 
   def operation_plan_params
-    params.require(:operation_plan).permit(:task, :work_time, :stamp).merge(impulse_purchase_id: params[:impulse_purchase_id]) 
+    params.require(:operation_plan).permit(:task, :work_time, :stamp).merge(impulse_purchase_id: params[:impulse_purchase_id])
   end
 end

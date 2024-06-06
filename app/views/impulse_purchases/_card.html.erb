@@ -13,20 +13,20 @@
   </h3>
 </h2>
 <table class="osare5-table col5t">
-<tbody>
-<% for i in 1..impulse_purchase.operation_plan.stamp do %>
-  <% if i==1 || (i - 5) == 1 %>
-    <tr>
-  <% end %>
-  <td>
-    <span class="under"><%= i.to_s %></span><br>
-    (<%= impulse_purchase.operation_plan.work_time %>分)
-  </td>
-  <% if (i % 5) == 0 %>
-    </tr>
-  <% end %>
-<% end %>
-</tbody>
+  <tbody>
+    <% for i in 1..impulse_purchase.operation_plan.stamp do %>
+      <% if i==1 || (i - 5) == 1 %>
+        <tr>
+      <% end %>
+      <td>
+        <span class="under"><%= i.to_s %></span><br>
+        (<%= impulse_purchase.operation_plan.work_time %>分)
+      </td>
+      <% if (i % 5) == 0 %>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
 </table>
 <div class="right">
   <%= impulse_purchase.created_at.strftime("%Y-%m-%d %H:%M") %>
