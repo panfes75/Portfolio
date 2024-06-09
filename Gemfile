@@ -50,7 +50,9 @@ gem "devise"
 gem 'sassc-rails'
 gem 'jquery-rails'
 
-gem "simple_calendar"
+# 管理者関係
+gem 'rails_admin'
+gem 'cancancan'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
