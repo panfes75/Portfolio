@@ -51,7 +51,7 @@ gem 'sassc-rails'
 gem 'jquery-rails'
 
 # 管理者関係
-gem 'rails-admin'
+gem 'rails_admin'
 gem 'cancancan'
 
 group :development, :test do
