@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations"
+  }
   root "static_pages#top"
   get "/term", to: "static_pages#term"
   get "/privacy", to: "static_pages#privacy"
