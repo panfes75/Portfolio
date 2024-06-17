@@ -43,22 +43,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.delivery_method = :smtp # 送信方法
-
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    # HELOコマンドで使用ドメイン
-    domain: 'smtp.gmail.com',
-    # Gmail
-    user_name: ENV['GOOGLE_MAIL_ADDRESS'],
-    # アプリパスワード
-    password: ENV['GOOGLE_APP_PASSWORD'],
-    # メールサーバー認証種類
-    authentication: 'plain',
-    # STARTTLSを自動検出し有効化
-    enable_starttls_auto: true
-  }
+  config.action_mailer.delivery_method = :letter_opener_web
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
