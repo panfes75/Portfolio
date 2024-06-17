@@ -36,13 +36,29 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # メール設定
+  config.action_mailer.raise_delivery_errors = true # 送信失敗時にエラーを発生させる
 
-  host = 'localhost:3000'
-  config.action_mailer.default_url_options = { host: host, protocol: 'http' }
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } # Default url for mailer
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp # 送信方法
+
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    # HELOコマンドで使用ドメイン
+    domain: 'smtp.gmail.com',
+    # Gmail
+    user_name: ENV['GOOGLE_MAIL_ADDRESS'],
+    # アプリパスワード
+    password: ENV['GOOGLE_APP_PASSWORD'],
+    # メールサーバー認証種類
+    authentication: 'plain',
+    # STARTTLSを自動検出し有効化
+    enable_starttls_auto: true
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
