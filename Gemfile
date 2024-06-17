@@ -54,6 +54,9 @@ gem 'jquery-rails'
 gem 'rails_admin'
 gem 'cancancan'
 
+# パスワード取扱
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
@@ -68,6 +71,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'letter_opener_web'
 
   gem "error_highlight", ">= 0.4.0", platforms: [:ruby]
   # テスト用

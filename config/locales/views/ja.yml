@@ -11,6 +11,11 @@ ja:
     sessions:
       new:
         title: 'ログイン'
+    passwords:
+      new:
+        title: 'パスワード再設定'
+      edit:
+        title: 'パスワード変更'
     registrations:
       new:
         title: '会員登録'
