@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :socail_profiles
 
   def self.from_omniauth(auth)
-    sns = SocailProfiles.where(provider: auth.provider, uid: auth.uid).first_or_create
+    sns = SocailProfile.where(provider: auth.provider, uid: auth.uid).first_or_create
     user = User.where(email: auth.info.email).first_or_initialize(
       nickname: auth.info.name,
         email: auth.info.email

@@ -4,10 +4,14 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   authorization
  end
 
+ def failure
+  redirect_to root_path
+end
+
  private
 
  def authorization
-  @user = User.from_omniauth(request.env["omniauth.auth"])
+  sns_info = User.from_omniauth(request.env["omniauth.auth"])
   @user = sns_info[:user]
 
   if @user.persisted?
