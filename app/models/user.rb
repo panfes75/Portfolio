@@ -6,7 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: %i[google_oauth2]
   validates :password, presence: true, on: :create
   validates :nickname, presence: true, length: { in: 2..40 }
-  has_many :socail_profiles
+  has_many :socail_profiles, dependent: :destroy
 
   def self.from_omniauth(auth)
     sns = SocailProfile.where(provider: auth.provider, uid: auth.uid).first_or_create
