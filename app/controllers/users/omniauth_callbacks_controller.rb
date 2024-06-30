@@ -4,6 +4,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   authorization
  end
 
+ def twitter
+  authorization
+ end
+
  def failure
   redirect_to root_path
 end
