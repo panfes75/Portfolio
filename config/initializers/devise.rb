@@ -315,4 +315,5 @@ Devise.setup do |config|
 
   config.omniauth :google_oauth2,ENV['GOOGLE_API_KEY'],ENV['GOOGLE_API_SECRET_KEY']
   config.omniauth :twitter2,ENV['TWITTER_API_KEY'],ENV['TWITTER_API_SECRET_KEY']
+  config.omniauth :line,ENV['LINE_API_KEY'],ENV['LINE_API_SECRET_KEY']
 end
