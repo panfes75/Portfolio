@@ -1,8 +1,14 @@
 <nav>
   <%= link_to '詳細', impulse_purchase_path(impulse_purchase.id), method: :get, class: "button" %>
   <%= link_to '編集', edit_impulse_purchase_path(impulse_purchase.id), method: :get, class: "button" %>
-    <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), class: "button" , 
+  <%= link_to '削除',impulse_purchase_path(impulse_purchase.id), class: "button", 
       id: "button-delete-#{impulse_purchase.id}", 
       method: :delete,
       data: { turbo_confirm: "削除しますか？" } %>
+  <%= link_to 'Xへポスト',
+      "http://twitter.com/share?url=#{root_url}/&text=#{impulse_purchase.title}の購入には#{impulse_purchase.operating_time}時間の労働が必要です。",
+      title: 'X',
+      target: '_blank',
+      class: 'twitter-share-button' %>
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </nav>
