@@ -5,4 +5,8 @@
       id: "button-delete-#{impulse_purchase.id}", 
       method: :delete,
       data: { turbo_confirm: "削除しますか？" } %>
+  <%= link_to 'Xへポスト',
+      "http://twitter.com/share?url=#{root_url}/&text=#{impulse_purchase.title}の購入には#{impulse_purchase.operating_time}時間の労働が必要です。",
+      title: 'X',
+      target: '_blank' %>
 </nav>
